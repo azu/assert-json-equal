@@ -44,6 +44,29 @@ Install with [npm](https://www.npmjs.com/):
 export declare const assertJsonEqual: (actual: any, expected: any, message?: string | Error | undefined) => void;
 ```
 
+## Mechanism
+
+Serialize and Deserialize object with `JSON` before compare objects with `assert.deepStrictEqual`.
+
+```ts
+import assert from "assert";
+
+const normalizeJSON = <T extends any>(json: T) => {
+    return JSON.parse(JSON.stringify(json));
+};
+/**
+ * `assert.deepStrictEqual` for JSON object.
+ * Same API with `assert.deepStrictEqual(a, b, [message])`
+ * @param actual
+ * @param expected
+ * @param message
+ */
+export const assertJsonEqual = (actual: any, expected: any, message?: string | Error) => {
+    assert.deepStrictEqual(normalizeJSON(actual), normalizeJSON(expected), message);
+}
+```
+
+
 ## Changelog
 
 See [Releases page](https://github.com/azu/assert-json-equal/releases).
