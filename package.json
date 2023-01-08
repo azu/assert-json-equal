@@ -1,6 +1,6 @@
 {
   "name": "assert-json-equal",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "assert.deepStrictEqual for JSON object.",
   "keywords": [
     "assert",
