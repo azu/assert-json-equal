@@ -1,6 +1,6 @@
 # assert-json-equal
 
-`assert.deepStrictEqual` for JSON object.
+`assert.deepStrictEqual` for JSON objects.
 
 assert-json-equal provide a `assertJsonEqual` function.
 
